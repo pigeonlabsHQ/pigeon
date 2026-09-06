@@ -1,0 +1,44 @@
+[project]
+name = "pigeon"
+version = "0.1.0"
+description = "Delegated authority for AI agents. A Pigeon Pass says what an agent may do."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Pigeon Labs" }]
+keywords = ["authority", "delegation", "agents", "authorization"]
+
+[project.urls]
+Homepage = "https://github.com/pigeonlabshq/pigeon"
+Issues = "https://github.com/pigeonlabshq/pigeon/issues"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Security",
+]
+dependencies = [
+    "cryptography>=43.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "hypothesis>=6.100",
+]
+
+[project.scripts]
+pigeon = "pigeon.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pigeon*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
