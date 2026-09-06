@@ -1,0 +1,88 @@
+{
+  "action": "deploy",
+  "comment": "Narrowed child may deploy to staging",
+  "context": {},
+  "expected": {
+    "allowed": true,
+    "reason_code": null
+  },
+  "id": "valid-delegated-allow",
+  "keys": {
+    "agent:deploy": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+    "agent:reader": "BAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ",
+    "agent:runner": "AwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM",
+    "human:alice": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE"
+  },
+  "now": "2026-01-01T00:00:00Z",
+  "pass": {
+    "authorities": [
+      {
+        "capabilities": [
+          "deploy"
+        ],
+        "constraints": {
+          "deploys": {
+            "max": 1,
+            "op": "rate",
+            "window_seconds": 3600
+          }
+        },
+        "delegation_depth": 1,
+        "expires_at": "2026-01-01T01:00:00Z",
+        "id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+        "issued_at": "2026-01-01T00:00:00Z",
+        "issuer": {
+          "principal_id": "agent:deploy",
+          "principal_type": "agent",
+          "public_key": "gTl3Dqh9F19Wo1Rmw0x-zMuNipG07jeiXfYPW4_Js5Q"
+        },
+        "nonce": "22222222222222222222222222222222",
+        "parent": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+        "resources": [
+          "environment:staging"
+        ],
+        "signature": "Eh6TaZFSNxO9dZRGnKrtVP1DN2IA38MMYO2QcPsZQDqwZoI0K_amBXHa3s9B1M_ez_aMGzTJSLn_lKuJxjG_Bg",
+        "subject": {
+          "principal_id": "agent:runner",
+          "principal_type": "agent",
+          "public_key": "7UkoxijRwsbq6QM4kFmVYSlZJzpcY_k2NsFGFKyHN9E"
+        },
+        "version": 1
+      },
+      {
+        "capabilities": [
+          "deploy"
+        ],
+        "constraints": {
+          "deploys": {
+            "max": 3,
+            "op": "rate",
+            "window_seconds": 3600
+          }
+        },
+        "delegation_depth": 0,
+        "expires_at": "2026-01-02T00:00:00Z",
+        "id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+        "issued_at": "2026-01-01T00:00:00Z",
+        "issuer": {
+          "principal_id": "human:alice",
+          "principal_type": "human",
+          "public_key": "iojj3XQJ8ZX9UtstPLpdcspnCb8dlBIb83SIAbQPb1w"
+        },
+        "nonce": "11111111111111111111111111111111",
+        "parent": null,
+        "resources": [
+          "environment:*"
+        ],
+        "signature": "XHoYLCsiP_OMCzbS7r838rmaayAwOmurrR-Tkbc7WE9DfRshkXHzZSd4Tp0H2AYPjWFaESfCdhHla06vRQxuAQ",
+        "subject": {
+          "principal_id": "agent:deploy",
+          "principal_type": "agent",
+          "public_key": "gTl3Dqh9F19Wo1Rmw0x-zMuNipG07jeiXfYPW4_Js5Q"
+        },
+        "version": 1
+      }
+    ]
+  },
+  "resource": "environment:staging"
+}

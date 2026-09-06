@@ -1,0 +1,60 @@
+{
+  "comment": "Child requests write which the parent does not have",
+  "expected": {
+    "reason_code": "PRIVILEGE_ESCALATION",
+    "success": false
+  },
+  "id": "delegation-capability-expansion",
+  "keys": {
+    "agent:deploy": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+    "agent:reader": "BAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ",
+    "agent:runner": "AwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM",
+    "human:alice": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE"
+  },
+  "parent": {
+    "authorities": [
+      {
+        "capabilities": [
+          "read"
+        ],
+        "constraints": {},
+        "delegation_depth": 0,
+        "expires_at": "2026-01-02T00:00:00Z",
+        "id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+        "issued_at": "2026-01-01T00:00:00Z",
+        "issuer": {
+          "principal_id": "human:alice",
+          "principal_type": "human",
+          "public_key": "iojj3XQJ8ZX9UtstPLpdcspnCb8dlBIb83SIAbQPb1w"
+        },
+        "nonce": "44444444444444444444444444444444",
+        "parent": null,
+        "resources": [
+          "database:customers"
+        ],
+        "signature": "uXsEF0rrwNC0UgxQJJDDnxLLVszqeBu7RUJVccu96TP7O8Za9JlLpJA4MHn0orr60go1GIsS670zzTABCxHqAw",
+        "subject": {
+          "principal_id": "agent:deploy",
+          "principal_type": "agent",
+          "public_key": "gTl3Dqh9F19Wo1Rmw0x-zMuNipG07jeiXfYPW4_Js5Q"
+        },
+        "version": 1
+      }
+    ]
+  },
+  "request": {
+    "capabilities": [
+      "read",
+      "write"
+    ],
+    "constraints": {},
+    "resources": [
+      "database:customers"
+    ],
+    "subject": {
+      "principal_id": "agent:runner",
+      "principal_type": "agent",
+      "public_key": "7UkoxijRwsbq6QM4kFmVYSlZJzpcY_k2NsFGFKyHN9E"
+    }
+  }
+}

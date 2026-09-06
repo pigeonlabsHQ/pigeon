@@ -1,0 +1,55 @@
+{
+  "action": "deploy",
+  "comment": "Trailing wildcard matches a suffix in the same namespace",
+  "context": {},
+  "expected": {
+    "allowed": true,
+    "reason_code": null
+  },
+  "id": "valid-wildcard-match",
+  "keys": {
+    "agent:deploy": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+    "agent:reader": "BAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ",
+    "agent:runner": "AwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM",
+    "human:alice": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE"
+  },
+  "now": "2026-01-01T00:00:00Z",
+  "pass": {
+    "authorities": [
+      {
+        "capabilities": [
+          "deploy"
+        ],
+        "constraints": {
+          "deploys": {
+            "max": 3,
+            "op": "rate",
+            "window_seconds": 3600
+          }
+        },
+        "delegation_depth": 0,
+        "expires_at": "2026-01-02T00:00:00Z",
+        "id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+        "issued_at": "2026-01-01T00:00:00Z",
+        "issuer": {
+          "principal_id": "human:alice",
+          "principal_type": "human",
+          "public_key": "iojj3XQJ8ZX9UtstPLpdcspnCb8dlBIb83SIAbQPb1w"
+        },
+        "nonce": "11111111111111111111111111111111",
+        "parent": null,
+        "resources": [
+          "environment:*"
+        ],
+        "signature": "XHoYLCsiP_OMCzbS7r838rmaayAwOmurrR-Tkbc7WE9DfRshkXHzZSd4Tp0H2AYPjWFaESfCdhHla06vRQxuAQ",
+        "subject": {
+          "principal_id": "agent:deploy",
+          "principal_type": "agent",
+          "public_key": "gTl3Dqh9F19Wo1Rmw0x-zMuNipG07jeiXfYPW4_Js5Q"
+        },
+        "version": 1
+      }
+    ]
+  },
+  "resource": "environment:staging"
+}

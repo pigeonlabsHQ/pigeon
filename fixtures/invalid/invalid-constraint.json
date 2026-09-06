@@ -1,0 +1,56 @@
+{
+  "action": "purchase",
+  "comment": "75 exceeds max amount 50",
+  "context": {
+    "amount": 75
+  },
+  "expected": {
+    "allowed": false,
+    "reason_code": "CONSTRAINT_VIOLATION"
+  },
+  "id": "invalid-constraint",
+  "keys": {
+    "agent:deploy": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+    "agent:reader": "BAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ",
+    "agent:runner": "AwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM",
+    "human:alice": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE"
+  },
+  "now": "2026-01-01T00:00:00Z",
+  "pass": {
+    "authorities": [
+      {
+        "capabilities": [
+          "purchase"
+        ],
+        "constraints": {
+          "amount": {
+            "op": "max",
+            "value": 50
+          }
+        },
+        "delegation_depth": 0,
+        "expires_at": "2026-01-02T00:00:00Z",
+        "id": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+        "issued_at": "2026-01-01T00:00:00Z",
+        "issuer": {
+          "principal_id": "human:alice",
+          "principal_type": "human",
+          "public_key": "iojj3XQJ8ZX9UtstPLpdcspnCb8dlBIb83SIAbQPb1w"
+        },
+        "nonce": "33333333333333333333333333333333",
+        "parent": null,
+        "resources": [
+          "merchant:books"
+        ],
+        "signature": "wlE1KwYwJhseILxZy7bg6gyBavno_zDZR4nVP0-ucY2Ce7XGFW30FVwApwttFjKogMcpTiowpTgOlARoEqngAg",
+        "subject": {
+          "principal_id": "agent:reader",
+          "principal_type": "agent",
+          "public_key": "ypOsFwUYcHHWe4PH_w7-gQjo7EUwV113JoeTM9vavnw"
+        },
+        "version": 1
+      }
+    ]
+  },
+  "resource": "merchant:books"
+}

@@ -1,0 +1,49 @@
+{
+  "action": "deploy",
+  "comment": "Tampering with signed field nonce",
+  "context": {},
+  "expected": {
+    "allowed": false,
+    "reason_code": "INVALID_SIGNATURE"
+  },
+  "id": "tamper-nonce",
+  "keys": {
+    "agent:deploy": "AgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI",
+    "agent:reader": "BAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQ",
+    "agent:runner": "AwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwM",
+    "human:alice": "AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE"
+  },
+  "now": "2026-01-01T00:00:00Z",
+  "pass": {
+    "authorities": [
+      {
+        "capabilities": [
+          "deploy"
+        ],
+        "constraints": {},
+        "delegation_depth": 0,
+        "expires_at": "2026-01-02T00:00:00Z",
+        "id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+        "issued_at": "2026-01-01T00:00:00Z",
+        "issuer": {
+          "principal_id": "human:alice",
+          "principal_type": "human",
+          "public_key": "iojj3XQJ8ZX9UtstPLpdcspnCb8dlBIb83SIAbQPb1w"
+        },
+        "nonce": "ffffffffffffffffffffffffffffffff",
+        "parent": null,
+        "resources": [
+          "environment:staging"
+        ],
+        "signature": "M44cFPfWEciBc2VpQ_81ve0TDBPAWoZSVIZVBcTTd1Nuj-V2X5U_0TK3cQ36jt35xiKVGIMe7qI7Z6np6SzPBg",
+        "subject": {
+          "principal_id": "agent:deploy",
+          "principal_type": "agent",
+          "public_key": "gTl3Dqh9F19Wo1Rmw0x-zMuNipG07jeiXfYPW4_Js5Q"
+        },
+        "version": 1
+      }
+    ]
+  },
+  "resource": "environment:staging"
+}
